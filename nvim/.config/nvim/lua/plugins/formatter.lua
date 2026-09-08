@@ -18,8 +18,10 @@ return { -- Autoformat
       -- Disable "format_on_save lsp_fallback" for languages that don't
       -- have a well standardized coding style. You can add additional
       -- languages here or re-enable it for the disabled ones.
-      local disable_filetypes = { c = true, cpp = true }
-      if disable_filetypes[vim.bo[bufnr].filetype] then
+      local disable_filetypes = { c = true, cpp = true, dotenv = true }
+      local name = vim.api.nvim_buf_get_name(bufnr)
+      -- .env values often contain `;`/`=`/spaces; formatters mangle them
+      if name:match("%.env") or disable_filetypes[vim.bo[bufnr].filetype] then
         return nil
       else
         return {

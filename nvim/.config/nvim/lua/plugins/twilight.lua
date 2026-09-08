@@ -14,7 +14,8 @@ return {
 		-- Expand to the top-most matching ancestor. Names must be real Tree-sitter
 		-- node types (inspect with :InspectTree) — generic "function"/"method" rarely match.
 		expand = {
-			-- functions / methods / classes (language-specific node names)
+			-- functions / methods (language-specific node names)
+			-- Omit class_*/impl_item so expand stops at the method, not the whole class/impl.
 			"function_declaration",
 			"function_definition",
 			"function_expression",
@@ -22,9 +23,6 @@ return {
 			"method_definition",
 			"method_declaration",
 			"function_item", -- rust
-			"impl_item", -- rust
-			"class_declaration",
-			"class_definition",
 			-- lua tables + shared control flow
 			"table_constructor",
 			"if_statement",

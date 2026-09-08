@@ -139,3 +139,4 @@ export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:/mnt/c/Program\ Files/cursor/Cursor.exe"
 export PATH="$HOME/.local/share/gem/ruby/3.2.0/bin:$PATH"
+export NODE_USE_SYSTEM_CA=1

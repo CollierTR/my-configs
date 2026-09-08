@@ -3,7 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	config = function()
 		require("veil").setup({
-			auto_enable = true,
+			auto_enable = false,
 			keymaps = {
 				toggle = "<leader>tv",
 				peek = "<leader>tp",
